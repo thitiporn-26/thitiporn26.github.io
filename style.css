@@ -3,96 +3,155 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: linear-gradient(-45deg, #ff9ecf, #ff69b4, #ffc0cb, #ffb6c1);
+
+    /* พื้นหลังสีรุ้ง */
+    background: linear-gradient(
+        -45deg,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        indigo,
+        violet
+    );
     background-size: 400% 400%;
-    animation: bgMove 8s ease infinite;
+    animation: rainbowBG 10s ease infinite;
+
     color: #333;
 }
 
-/* พื้นหลังเคลื่อนไหว */
-@keyframes bgMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* พื้นหลังสีรุ้งเคลื่อนไหว */
+@keyframes rainbowBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
+/* Header สีรุ้ง */
 header {
-    background: linear-gradient(90deg, #ff69b4, #ff1493);
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        violet
+    );
+    background-size: 400% 400%;
+    animation: rainbowBG 5s linear infinite;
+
     color: white;
     padding: 20px 0;
     text-align: center;
-    animation: fadeDown 1s ease;
 }
 
+/* ตัวอักษรสีรุ้ง */
 header h1 {
-    margin: 0;
+    font-size: 3rem;
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        violet
+    );
+    background-size: 400%;
+    animation: rainbowText 3s linear infinite;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-header p {
-    margin: 5px 0 0;
+/* ตัวหนังสือสีรุ้ง */
+@keyframes rainbowText {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
 }
 
+/* กล่องเนื้อหา */
 section {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
-    animation: fadeUp 1s ease;
+
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+
+    animation: float 3s ease-in-out infinite;
     transition: all 0.3s ease;
 }
 
+/* ลอยขึ้นลง */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 section:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 30px rgba(255, 20, 147, 0.6);
+    transform: scale(1.05) rotate(1deg);
 }
 
-h2 {
-    color: #ff1493;
+/* หัวข้อสีรุ้ง */
+h2,
+h3 {
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        violet
+    );
+    background-size: 400%;
+    animation: rainbowText 3s linear infinite;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.project {
-    margin-bottom: 20px;
-}
-
-.project h3 {
-    margin: 0 0 10px;
-    color: #ff69b4;
-}
-
-ul {
-    list-style-type: square;
-    padding-left: 20px;
-}
-
+/* Footer สีรุ้ง */
 footer {
     text-align: center;
-    padding: 10px 0;
-    background: linear-gradient(90deg, #ff1493, #ff69b4);
+    padding: 15px;
+
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        violet
+    );
+    background-size: 400% 400%;
+    animation: rainbowBG 5s linear infinite;
+
     color: white;
-    margin-top: 20px;
-}
-
-/* Animation */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
